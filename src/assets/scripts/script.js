@@ -1,3 +1,4 @@
+/*
 ////////////////////////////////////////////////////// Sidebar Toggle //////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav-item');
@@ -373,7 +374,7 @@ let products = [
 
 
 
-let customers = [
+/!*let customers = [
     { id: "C001", name: "Chinthana Chamod", email: "dinesh.perera@example.com", phone: "0771234567", address: "123" + " Galle " },
     { id: "C002", name: "Nimali jayasinghe", email: "nimali.fern@example.com", phone: "0782345678", address: "456" + " Kandy " },
     { id: "C003", name: "Chamilka Kalhara", email: "chamilka.jayas@example.com", phone: "0753456789", address: "789" + " Negombo " },
@@ -381,6 +382,16 @@ let customers = [
     { id: "C005", name: "Saman Wickramasinghe", email: "saman.wickrama@example.com", phone: "0705678901", address: "223 Matara " },
     { id: "C006", name: "Pavithra Rajapaksha", email: "pavithra.rajap@example.com", phone: "0776789012", address: "334 Jaffna " },
     { id: "C007", name: "Kasun Viboda", email: "kamal.weera@example.com", phone: "0787890123", address: "445" + " Battaramulla" },
+];*!/
+
+let customers = [
+    { id: "C001", name: "Chinthana Chamod", email: "dinesh.perera@example.com", phone: "0771234567", address: " Galle " },
+    { id: "C002", name: "Nimali jayasinghe", email: "nimali.fern@example.com", phone: "0782345678", address: " Kandy" },
+    { id: "C003", name: "Chamilka Kalhara", email: "chamilka.jayas@example.com", phone: "0753456789", address: " Negombo " },
+    { id: "C004", name: "Ravi Royster", email: "ravi.kumara@example.com", phone: "0714567890", address: " Lavinia" },
+    { id: "C005", name: "Saman Wickramasinghe", email: "saman.wickrama@example.com", phone: "0705678901", address: " Matara " },
+    { id: "C006", name: "Pavithra Rajapaksha", email: "pavithra.rajap@example.com", phone: "0776789012", address: "Jaffna " },
+    { id: "C007", name: "Kasun Viboda", email: "kamal.weera@example.com", phone: "0787890123", address: " Battaramulla" },
 ];
 
 
@@ -557,28 +568,6 @@ document.addEventListener('DOMContentLoaded', function () {
 ////////////////////////////////////////////////////////////////// Charts ////////////////////////////////////////////////////////////
 
 // Line Chart
-/*var ctxLine = document.getElementById('lineChart').getContext('2d');
-var lineChart = new Chart(ctxLine, {
-    type: 'line',
-    data: {
-        labels: ['Oct 11', 'Oct 15', 'Oct 19', 'Oct 25', 'Nov 1', 'Nov 5', 'Nov 11'],
-        datasets: [{
-            label: 'Selected Period',
-            data: [3000, 4000, 3500, 6000, 4500, 5000, 7000],
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        },
-            {
-                label: 'Comparison',
-                data: [2000, 3000, 2500, 4000, 3500, 4200, 6000],
-                borderColor: 'rgb(255, 99, 132)',
-                tension: 0.1
-            }]
-    },
-    options: {
-        responsive: true
-    }
-});*/
 
 var ctxLine = document.getElementById('lineChart').getContext('2d');
 var lineChart = new Chart(ctxLine, {
@@ -638,3 +627,4 @@ var pieChart = new Chart(ctxPie, {
 });
 
 
+*/
