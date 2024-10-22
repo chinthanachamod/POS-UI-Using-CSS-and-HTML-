@@ -8,157 +8,161 @@
 </head>
 <body>
 
-<div class="container mt-5">
-    <h2>Items</h2> <br>
-    <form id="itemForm">
-        <div class="mb-3">
-            <label for="itemName" class="form-label">Item Name</label>
-            <input type="text" class="form-control" id="itemName" placeholder="Enter item name">
-        </div>
-        <div class="mb-3">
-            <label for="itemPrice" class="form-label">Price</label>
-            <input type="number" class="form-control" id="itemPrice" placeholder="Enter item price">
-        </div>
-        <div class="mb-3">
-            <label for="itemQty" class="form-label">Qty On Hand</label>
-            <input type="number" class="form-control" id="itemQty" placeholder="Enter quantity on hand">
-        </div>
-        <div class="mb-3">
-            <label for="itemImage" class="form-label">Add Item Image URL</label>
-            <input type="text" class="form-control" id="itemImage" placeholder="Enter item image URL">
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="reset" class="btn btn-secondary">Clear</button>
-    </form>
+<section class="itemForm">
+    <div class="container mt-5">
+        <h2>Items</h2> <br>
+        <form id="itemForm">
+            <div class="mb-3">
+                <label for="itemName" class="form-label">Item Name</label>
+                <input type="text" class="form-control" id="itemName" placeholder="Enter item name">
+            </div>
+            <div class="mb-3">
+                <label for="itemPrice" class="form-label">Price</label>
+                <input type="number" class="form-control" id="itemPrice" placeholder="Enter item price">
+            </div>
+            <div class="mb-3">
+                <label for="itemQty" class="form-label">Qty On Hand</label>
+                <input type="number" class="form-control" id="itemQty" placeholder="Enter quantity on hand">
+            </div>
+            <div class="mb-3">
+                <label for="itemImage" class="form-label">Add Item Image URL</label>
+                <input type="text" class="form-control" id="itemImage" placeholder="Enter item image URL">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
 
-    <table class="table table-striped mt-5">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Item Name</th>
-            <th>Item Image</th>
-            <th>Unit Price</th>
-            <th>Qty On Hand</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>Apple</td>
-            <td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Apple_fruit.jpg" alt="Apple" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.100.00</td>
-            <td>100</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Banana (1Kg)</td>
-            <td><img src="https://images.forbesindia.com/media/images/2022/Sep/img_193773_banana.jpg" alt="Banana" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.120.00</td>
-            <td>150 Kg</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Orange</td>
-            <td><img src="https://hips.hearstapps.com/hmg-prod/images/orange-1558624428.jpg" alt="Orange" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.100.00</td>
-            <td>80</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Grapes (1Kg)</td>
-            <td><img src="https://objectstorage.ap-mumbai-1.oraclecloud.com/n/softlogicbicloud/b/cdn/o/products/600-600/320010--01--1549602291.jpeg" alt="Grapes" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.150.00</td>
-            <td>10Kg</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Watermelon</td>
-            <td><img src="https://snaped.fns.usda.gov/sites/default/files/styles/crop_ratio_7_5/public/seasonal-produce/2018-05/watermelon.jpg?itok=WlQcb2Uh" alt="Watermelon" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.200.00</td>
-            <td>30</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Pineapple</td>
-            <td><img src="https://www.simplyrecipes.com/thmb/OAx9q26OBB6MlVFUGvHVMySyiGs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-How-to-Ripe-Pineapple-LEAD-1-2fa3fc49249b48caa5d80c54fa71675f.jpg" alt="Pineapple" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.250.00</td>
-            <td>50</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>Strawberry (500g)</td>
-            <td><img src="https://images.everydayhealth.com/images/diet-nutrition/ordinary-fruits-with-amazing-health-benefits-05-1440x810.jpg?w=720" alt="Strawberry" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.1000.00</td>
-            <td>10Kg</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>Dragon Fruit</td>
-            <td><img src="https://hips.hearstapps.com/hmg-prod/images/white-dragon-fruit-royalty-free-image-1594218654.jpg" alt="Dragon Fruit" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.150.00</td>
-            <td>40</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>Olive (1Kg)</td>
-            <td><img src="https://t3.ftcdn.net/jpg/06/44/02/46/360_F_644024600_z6kDBNfJr5BKcfqnry4Nv7Otxza8Un5T.jpg" alt="Olive" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.2200.00</td>
-            <td>10</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>Mango</td>
-            <td><img src="https://www.cleanjuice.com/wp-content/uploads/2023/06/clean_juice_mango_benefits_hero-3-scaled-1.jpeg" class="img-fluid" style="max-width: 50px;"></td>
-            <td>Rs.100.00</td>
-            <td>30</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Update</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table table-striped mt-5">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Item Image</th>
+                <th>Unit Price</th>
+                <th>Qty On Hand</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Apple</td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Apple_fruit.jpg" alt="Apple" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.100.00</td>
+                <td>100</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Banana (1Kg)</td>
+                <td><img src="https://images.forbesindia.com/media/images/2022/Sep/img_193773_banana.jpg" alt="Banana" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.120.00</td>
+                <td>150 Kg</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Orange</td>
+                <td><img src="https://hips.hearstapps.com/hmg-prod/images/orange-1558624428.jpg" alt="Orange" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.100.00</td>
+                <td>80</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Grapes (1Kg)</td>
+                <td><img src="https://objectstorage.ap-mumbai-1.oraclecloud.com/n/softlogicbicloud/b/cdn/o/products/600-600/320010--01--1549602291.jpeg" alt="Grapes" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.150.00</td>
+                <td>10Kg</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Watermelon</td>
+                <td><img src="https://thumbs.dreamstime.com/b/watermelon-13177659.jpg" alt="Watermelon" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.200.00</td>
+                <td>30</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Pineapple</td>
+                <td><img src="https://www.simplyrecipes.com/thmb/OAx9q26OBB6MlVFUGvHVMySyiGs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-How-to-Ripe-Pineapple-LEAD-1-2fa3fc49249b48caa5d80c54fa71675f.jpg" alt="Pineapple" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.250.00</td>
+                <td>50</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Strawberry (500g)</td>
+                <td><img src="https://images.everydayhealth.com/images/diet-nutrition/ordinary-fruits-with-amazing-health-benefits-05-1440x810.jpg?w=720" alt="Strawberry" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.1000.00</td>
+                <td>10Kg</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dragon Fruit</td>
+                <td><img src="https://hips.hearstapps.com/hmg-prod/images/white-dragon-fruit-royalty-free-image-1594218654.jpg" alt="Dragon Fruit" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.150.00</td>
+                <td>40</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Olive (1Kg)</td>
+                <td><img src="https://t3.ftcdn.net/jpg/06/44/02/46/360_F_644024600_z6kDBNfJr5BKcfqnry4Nv7Otxza8Un5T.jpg" alt="Olive" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.2200.00</td>
+                <td>10</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Mango</td>
+                <td><img src="https://www.cleanjuice.com/wp-content/uploads/2023/06/clean_juice_mango_benefits_hero-3-scaled-1.jpeg" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.100.00</td>
+                <td>30</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-    <!-- Return to Home button -->
-    <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
-</div>
+        <!-- Return to Home button -->
+        <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</section>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
