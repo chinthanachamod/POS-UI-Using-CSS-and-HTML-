@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="orderHistoryForm">
+    <div class="container mt-5">
+        <h2>Order History</h2> <br>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Date</th>
+                <th>Total Items</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Chamod</td>
+                <td>2024-09-10</td>
+                <td>2</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#orderDetailsModal1">View</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Theeekshana</td>
+                <td>2024-10-02</td>
+                <td>3</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#orderDetailsModal2">View</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thenura</td>
+                <td>2024-10-13</td>
+                <td>1</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#orderDetailsModal3">View</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+
+    <!-- Modal for viewing order details for Chamod -->
+    <div class="modal fade" id="orderDetailsModal1" tabindex="-1" aria-labelledby="orderDetailsModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel1">Order Details for John Doe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> 1</p>
+                    <p><strong>Customer Name:</strong> John Doe</p>
+                    <p><strong>Date:</strong> 2024-10-10</p>
+                    <p><strong>Total Price:</strong> Rs. 600.00</p>
+                    <p><strong>Payment Method:</strong> Card</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>
+                        <li>Apple - Quantity: 3</li>
+                        <li>Banana - Quantity: 2</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing order details for Theekshana -->
+    <div class="modal fade" id="orderDetailsModal2" tabindex="-1" aria-labelledby="orderDetailsModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel2">Order Details for Jane Smith</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> 2</p>
+                    <p><strong>Customer Name:</strong> Theekshana</p>
+                    <p><strong>Date:</strong> 2024-10-12</p>
+                    <p><strong>Total Price:</strong> Rs. 750.00</p>
+                    <p><strong>Payment Method:</strong> Card</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>
+                        <li>Orange - Quantity: 1</li>
+                        <li>Grapes - Quantity: 2</li>
+                        <li>Pineapple - Quantity: 1</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing order details for Thenura -->
+    <div class="modal fade" id="orderDetailsModal3" tabindex="-1" aria-labelledby="orderDetailsModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel3">Order Details for Emily Johnson</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> 3</p>
+                    <p><strong>Customer Name:</strong> Thenura</p>
+                    <p><strong>Date:</strong> 2024-10-13</p>
+                    <p><strong>Total Price:</strong> Rs. 300.00</p>
+                    <p><strong>Payment Method:</strong> Cash</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>
+                        <li>Banana - Quantity: 5</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

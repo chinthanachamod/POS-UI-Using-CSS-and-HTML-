@@ -2,822 +2,500 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SL Fruit Stroe</title>
-
-    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
 
-    <!-- Favicon-->
-    <!--<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">-->
+        body {
+            /*background-image: url('assets/images/background.jpg');*/
+            background-size: cover; /* Ensure full coverage */
+            background-position: center; /* Center the background */
+            background-repeat: no-repeat; /* No repetition */
+            height: 100vh; /* Full height for background */
+            color: black;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        /* Text styling for visibility */
+        /*#dashboardSection {
+            color: white;
+        }*/
 
-    <!-- normalize.css -->
-    <link rel="stylesheet" href="assets/styles/normalize.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/styles/style.css">
-
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- Bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        /* Text styling for visibility */
+        h1, p {
+            /*color: white;*/
+            color: black;
+            /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); *//* Text shadow for contrast */
+        }
 
 
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <nav class="navbar bg-primary" style="background-color: #3a90e6 !important;>
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="../src/assets/images/logo.png" alt="Logo" width="200" height="40" class="d-inline-block align-text-top">
-                </a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
 
-    <!-- Navigation -->
-    <div class="aside">
-        <div class="aside-navigation">
-            <div class="profile-picture">
-                <img src="assets/images/profile.jpeg" alt="Profile Image">
-                <span>Chamod</span>
-            </div>
-            <div class="card text-center">
-                <ul class="nav nav-pills card-header-pills">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="dashboardBtn"><span><i class="fa-solid fa-chart-pie" style="width: 50px"></i></span>Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="productBtn"><i class="fa-solid fa-boxes-packing" style="width: 50px"></i></span>Product</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="customerBtn"><i class="fas fa-users" style="width: 50px"></i></span>Customer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="registerBtn"><i class="fa-solid fa-cash-register" style="width: 50px"></i></span>Order</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="userBtn"><i class="fa-solid fa-user-tie" style="width: 50px"></i></span>User</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="invoiceBtn"><i class="fa-solid fa-file-invoice-dollar" style="width: 50px"></i></span>Invoice</a>
-                    </li>
-                </ul>
-            </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!--<a class="navbar-brand" href="#">POS System</a>-->
+        <!-- Brand logo -->
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.png" alt="Brand Logo" style="height: 40px;"> <!-- Add your brand logo here -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a id="dashboard-nav" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a id="signin-nav" class="nav-link">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a id="signup-nav" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a id="customer-nav" class="nav-link">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a id="item-nav" class="nav-link">Items</a>
+                </li>
+                <li class="nav-item">
+                    <a id="order-nav" class="nav-link">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a id="order-history-nav" class="nav-link">Order History</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <!-- Main Content -->
-    <div class="main-content"></div>
-    
-    <!-- Product Section -->
-    <section class="product" style="display: none">
+<section id="dashboardSection"  class="container mt-5">
+ <!-- Dashboard -->
+
+    <div class="dashboardContent">
+        <h1>Welcome to The SL Fruit Store</h1>
+        <p>We always provide you with fresh fruits...</p>
+    </div>
+</section>
+
+
+<!-- Sign In -->
+<section id="signinSection">
+    <div class="container mt-5">
+        <h2>- Sign In -</h2> <br>
         <form>
-            <div class="form-title">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <i class="fa-solid fa-boxes-packing"></i>
-                        Product
-                    </a>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="signInemail" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signInpassword" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <a href="../index.html" class="btn btn-secondary ms-2">Back to Home</a>
+        </form>
+        </form>
+    </div>
+</section>
+
+<!-- Sign Up -->
+<section id="signupSection">
+    <div class="container mt-5">
+        <h2>- Sign Up -</h2> <br>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter full name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Create a password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <a href="../index.html" class="btn btn-secondary ms-2">Back to Home</a>
+        </form>
+    </div>
+</section>
+
+<!-- Customer -->
+<section id="customerSection">
+    <div class="container mt-5">
+        <h2>Customers</h2> <br>
+        <form id="customerForm">
+            <div class="mb-3">
+                <label for="customerName" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="customerName" placeholder="Enter customer name">
+            </div>
+            <div class="mb-3">
+                <label for="customerEmail" class="form-label">Customer Email</label>
+                <input type="email" class="form-control" id="customerEmail" placeholder="Enter customer email">
+            </div>
+            <div class="mb-3">
+                <label for="customerPhone" class="form-label">Mobile</label>
+                <input type="text" class="form-control" id="customerPhone" placeholder="Enter phone number">
+            </div>
+            <button id="customer_save_btn" type="button" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
+
+        <table class="table table-striped mt-5">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="customerTableBody">
+            <!--<tr>
+                <td>1</td>
+                <td>Chamod</td>
+                <td>chamod@gmail.com</td>
+                <td>071 7500 753</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Theekshana</td>
+                <td>theekkshana@gmail.com</td>
+                <td>075 4620 377</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thenura</td>
+                <td>thenura@gmail.com</td>
+                <td>071 7477 210</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>-->
+            </tbody>
+        </table>
+
+        <!-- Return to Home button -->
+        <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</section>
+
+<!-- Item -->
+<section id="itemSection">
+    <div class="container mt-5">
+        <h2>Items</h2> <br>
+        <form id="itemForm">
+            <div class="mb-3">
+                <label for="itemName" class="form-label">Item Name</label>
+                <input type="text" class="form-control" id="itemName" placeholder="Enter item name">
+            </div>
+            <div class="mb-3">
+                <label for="itemPrice" class="form-label">Price</label>
+                <input type="number" class="form-control" id="itemPrice" placeholder="Enter item price">
+            </div>
+            <div class="mb-3">
+                <label for="itemQty" class="form-label">Qty On Hand</label>
+                <input type="number" class="form-control" id="itemQty" placeholder="Enter quantity on hand">
+            </div>
+            <div class="mb-3">
+                <label for="itemImage" class="form-label">Add Item Image URL</label>
+                <input type="text" class="form-control" id="itemImage" placeholder="Enter item image URL">
+            </div>
+            <button id="item_save_btn"type="button" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
+
+        <table class="table table-striped mt-5">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Item Image</th>
+                <th>Unit Price</th>
+                <th>Qty On Hand</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="itemTableBody">
+           <!-- <tr>
+                <td>1</td>
+                <td>Apple</td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Apple_fruit.jpg" alt="Apple" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.100.00</td>
+                <td>100</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Banana (1Kg)</td>
+                <td><img src="https://images.forbesindia.com/media/images/2022/Sep/img_193773_banana.jpg" alt="Banana" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.120.00</td>
+                <td>150 Kg</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Orange</td>
+                <td><img src="https://hips.hearstapps.com/hmg-prod/images/orange-1558624428.jpg" alt="Orange" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.100.00</td>
+                <td>80</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+
+                <td>4</td>
+                <td>Mango</td>
+                <td><img src="https://www.cleanjuice.com/wp-content/uploads/2023/06/clean_juice_mango_benefits_hero-3-scaled-1.jpeg" class="img-fluid" style="max-width: 50px;"></td>
+                <td>Rs.100.00</td>
+                <td>30</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>-->
+            </tbody>
+        </table>
+
+        <!-- Return to Home button -->
+        <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</section>
+
+
+<!-- Order -->
+<section id="orderSection">
+    <div class="container mt-5">
+        <h2>Orders</h2> <br>
+        <form id="orderForm">
+            <div class="mb-3">
+                <label for="customerName" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="ordercustomerName" placeholder="Enter customer name">
+            </div>
+            <div class="mb-3">
+                <label for="itemName" class="form-label">Item Name</label>
+                <input type="text" class="form-control" id="orderitemName" placeholder="Enter item name">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity">
+            </div>
+            <button id="order_save_btn" type="button" class="btn btn-success">Place Order</button> <!-- Green button -->
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
+
+        <table class="table table-striped mt-5">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="orderTableBody">
+            <!--<tr>
+                <td>1</td>
+                <td>Chamod</td>
+                <td>Apple</td>
+                <td>5</td>
+                <td>Rs. 100.00</td>
+                <td>Rs. 500.00</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Theekshana</td>
+                <td>Banana (1Kg)</td>
+                <td>3 Kg</td>
+                <td>Rs. 120.00</td>
+                <td>Rs. 360.00</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thenura</td>
+                <td>Orange</td>
+                <td>10</td>
+                <td>Rs. 80.00</td>
+                <td>Rs. 800.00</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Update</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>-->
+            </tbody>
+        </table>
+
+        <!-- Return to Home button -->
+        <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</section>
+
+<!-- Order History -->
+<section id="orderHistorySection">
+    <div class="container mt-5">
+        <h2>Order History</h2> <br>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Date</th>
+                <th>Total Items</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="orderHistoryTableBody">
+            <tr>
+                <td>1</td>
+                <td>Chamod</td>
+                <td>2024-09-10</td>
+                <td>2</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#orderDetailsModal1">View</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Theeekshana</td>
+                <td>2024-10-02</td>
+                <td>3</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#orderDetailsModal2">View</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thenura</td>
+                <td>2024-10-13</td>
+                <td>1</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#orderDetailsModal3">View</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="../index.html" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+
+    <!-- Modal for viewing order details for Chamod -->
+    <div class="modal fade" id="orderDetailsModal1" tabindex="-1" aria-labelledby="orderDetailsModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel1">Order Details for John Doe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-    
-            <div class="form-search">
-                <nav class="navbar bg-body-tertiary">
-                    <div class="container">
-                        <form class="d-flex" role="search">
-                            <div>
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-primary" id="product-add-btn">
-                                    <i class="bi bi-plus"></i>
-                                    Add Product</button>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
-            </div>
-    
-            <div class="product-table">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Code</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Unit Price</th>
-                        <th scope="col">Qty On Hand</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                        <!--  -->
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </section>
-
-    <!-- Customer Section -->
-    <section class="customer" style="display: none">
-        <form>
-            <div class="form-title">
-                <nav class="navbar" style="background-color: #515050">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <i class="fas fa-users"></i>
-                            Customer
-                        </a>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="form-search">
-                <nav class="navbar bg-body-tertiary">
-                    <div class="container">
-                        <form class="d-flex" role="search">
-                            <div>
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-primary" id="customer-add-btn">
-                                    <i class="bi bi-plus"></i>
-                                    Add Customer
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="customer-table table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                        <!--  -->
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </section>
-
-    <!-- User Section -->
-    <section class="user" style="display: none" id="user">
-        <form>
-            <div class="form-title">
-                <nav class="navbar" style="background-color: #515050">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <i class="fa-solid fa-user-tie"></i>
-                            User
-                        </a>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="form-search">
-                <nav class="navbar bg-body-tertiary">
-                    <div class="container">
-                        <form class="d-flex" role="search">
-                            <div>
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-primary" id="user-add-btn">
-                                    <i class="bi bi-plus"></i>
-                                    Add User
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="user-table">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Salary</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                        <!--  -->
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </section>
-
-
-    <!-- Cash Register Section -->
-    <section class="cash-register" style="display: none">
-        <form>
-            <div class="form-title">
-                <nav class="navbar" style="background-color: #515050">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <i class="fa-solid fa-cash-register"></i>
-                            Cash Register
-                        </a>
-                    </div>
-                </nav>
-            </div>
-
-
-
-            <!-- POS Layout Start -->
-            <div class="container-fluid">
-
-                <div class="row">
-
-                    <!-- Product List -->
-                    <div class="col-md-8 p-4">
-                        <!-- Customer Phone Number Search Bar with Add Customer Button -->
-                        <div class="form-customer-search mb-3">
-                            <nav class="navbar bg-body-tertiary">
-                                <div class="container">
-                                    <form class="d-flex" role="search">
-                                        <div>
-                                            <input class="form-control me-2" type="search" placeholder="Search by Customer Phone Number" aria-label="Search by Phone Number">
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-outline-info" type="submit">Search</button>
-                                        </div>
-                                        <div>
-                                            <button type="button" class="btn btn-primary" id="customer-add-btn-reg">+ Add Customer</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </nav>
-                        </div>
-                        <h5>Let's do your best today 🚀</h5>
-                        <p>Date: December 18, 2023</p>
-
-                        <!-- Categories -->
-                        <div class="mb-4">
-                            <button class="btn btn-outline-primary me-2">All</button>
-                            <button class="btn btn-outline-secondary me-2">Cakes</button>
-                            <button class="btn btn-outline-secondary me-2">Cookies</button>
-                            <button class="btn btn-outline-secondary">Drinks</button>
-                        </div>
-
-                        <!-- Product Cards Container -->
-                        <div class="row row-cols-1 row-cols-md-4 g-4" id="product-list">
-                            <!-- Product cards will be dynamically added here -->
-                        </div>
-                    </div>
-
-                    <!-- Cart/Order Summary -->
-                    <div class="col-md-4 p-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Ravi Royster</h5>
-                                <p class="card-text">#12312312</p>
-
-                                <h6>Your Order:</h6>
-                                <ul class="list-group mb-3">
-                                    <li class="list-group-item d-flex justify-content-between">
-                                        <span>Banana 1Kg</span>
-                                        <span>RS. 120.00</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between">
-                                        <span>Dragon Fruit</span>
-                                        <span>Rs. 200.00</span>
-                                    </li>
-                                </ul>
-
-                                <h6>Total:</h6>
-                                <p>Subtotal: Rs. 320.00</p>
-                                <p>Service Tax: Rs. 5.00</p>
-                                <h6>Total Payment: Rs. 325.00</h6>
-
-                                <div class="mb-3">
-                                    <label for="paymentMethod" class="form-label">Payment Method</label>
-                                    <select class="form-select" id="paymentMethod">
-                                        <option selected>Master Card</option>
-                                        <option>Paypal</option>
-                                        <option>Scan Code</option>
-                                    </select>
-                                </div>
-
-                                <button class="btn btn-primary w-100">Make Order</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> 1</p>
+                    <p><strong>Customer Name:</strong> Chamod</p>
+                    <p><strong>Date:</strong> 2024-10-10</p>
+                    <p><strong>Total Price:</strong> Rs. 600.00</p>
+                    <p><strong>Payment Method:</strong> Card</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>
+                        <li>Apple - Quantity: 3</li>
+                        <li>Banana - Quantity: 2</li>
+                    </ul>
                 </div>
-            </div>
-            <!-- POS Layout End -->
-
-        </form>
-    </section>
-
-    <!-- Invoice Section -->
-    <section class="invoice" style="display: none">
-        <form>
-            <div class="form-title">
-                <nav class="navbar" style="background-color: #515050">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <i class="fa-solid fa-file-invoice-dollar"></i>
-                            Invoice
-                        </a>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="form-search">
-                <nav class="navbar bg-body-tertiary">
-                    <div class="container">
-                        <form class="d-flex" role="search">
-                            <div>
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-primary" id="invoice-add-btn">
-                                    <i class="bi bi-plus"></i>
-                                    Add Invoice
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="invoice-table">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Invoice Id</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row" class="row-id">1</th>
-                        <td class="row-name">Chinthana Chamod</td>
-                        <td class="row-date">2024-01-07</td>
-                        <td class="row-total">Rs. 500.00</td>
-                        <td class="row-action">
-                            <button type="button" class="btn btn-danger">Update</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="row-id">2</th>
-                        <td class="row-name">Aven Oshana</td>
-                        <td class="row-date">2024-02-18</td>
-                        <td class="row-total">Rs. 800.00</td>
-                        <td>
-                            <button type="button" class="btn btn-danger">Update</button>
-                        </td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </section>
-
-    <!-- Dashboard Section -->
-    <section class="dashboard" style="display:none;">
-        <form>
-            <div class="dashboard-content">
-                <div class="row mb-4">
-                    <!-- Total Orders -->
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white bg-primary mb-3 equal-height-card" style="max-width: 18rem;">
-                            <div class="card-header">Total Orders</div>
-                            <div class="card-body">
-                                <h5 class="card-t">65</h5>
-                                <p class="card-text">+2.1%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Total Sales -->
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white bg-secondary mb-3 equal-height-card" style="max-width: 18rem;">
-                            <div class="card-header">Total Sales</div>
-                            <div class="card-body">
-                                <h5 class="card-t">97,056</h5>
-                                <p class="card-text">+5.6%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Total Revenue -->
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white bg-success mb-3 equal-height-card" style="max-width: 18rem;">
-                            <div class="card-header">Total Revenue</div>
-                            <div class="card-body">
-                                <h5 class="card-t">27,230</h5>
-                                <p class="card-text">+4.8%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add New Item and Add New Customer (combined) -->
-                    <div class="col-md-3 mb-3" id="new-item">
-                        <div class="row h-100">
-                            <!-- Add New Item -->
-                            <div class="col-12 mb-3">
-                                <div class="card equal-height-half">
-                                    <div class="card-body d-flex align-items-center justify-content-center">
-                                        <i class="fa-solid fa-box fa-2x me-2"></i>
-                                        <h6 class="mt-2">Add New Item</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Add New Customer -->
-                            <div class="col-12" id="new -customer">
-                                <div class="card equal-height-half">
-                                    <div class="card-body d-flex align-items-center justify-content-center">
-                                        <i class="fa-solid fa-user fa-2x me-2"></i>
-                                        <h6 class="mt-2">Add New Customer</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Charts Section -->
-                <div class="row">
-                    <!-- Line Chart -->
-                    <div class="col-md-8 mb-4">
-                        <div class="card chart-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Order Summary</h5>
-                                <canvas id="lineChart" width="400" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pie Chart -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card chart-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Top Categories</h5>
-                                <canvas id="pieChart" width="400" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Transaction Section -->
-                <div class="row">
-
-                </div>
-
-            </div>
-        </form>
-    </section>
-
-
-
-
-
-    <!-- Forms -->
-    <!-- Customer Form -->
-    <section class="customer-form">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">New Customer</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Customer Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label">Customer Id</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Name</label>
-                                <input class="form-control" type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Address</label>
-                                <input class="form-control" id="customer-address2" type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customerPhone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="customerPhone"
-                                       placeholder="(123) 456-7890"
-                                       pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                                       title="Phone number should be in the format (123) 456-7890">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Customer Form Edit -->
-    <section class="customer-form-edit">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Customer</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="customer-id" class="form-label">Customer Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label" id="customer-id">Customer Id</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-name" class="form-label">Name</label>
-                                <input class="form-control" id="customer-name"type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-address" class="form-label">Address</label>
-                                <input class="form-control" id="customer-address" type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="customer-phone"
-                                       placeholder="(123) 456-7890"
-                                       pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                                       title="Phone number should be in the format (123) 456-7890">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="customer-email" aria-describedby="emailHelp">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
+    <!-- Modal for viewing order details for Theekshana -->
+    <div class="modal fade" id="orderDetailsModal2" tabindex="-1" aria-labelledby="orderDetailsModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel2">Order Details for Jane Smith</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> 2</p>
+                    <p><strong>Customer Name:</strong> Theekshana</p>
+                    <p><strong>Date:</strong> 2024-10-12</p>
+                    <p><strong>Total Price:</strong> Rs. 750.00</p>
+                    <p><strong>Payment Method:</strong> Card</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>
+                        <li>Orange - Quantity: 1</li>
+                        <li>Grapes - Quantity: 2</li>
+                        <li>Pineapple - Quantity: 1</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- User Form -->
-    <section class="user-form">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">New Customer</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">User Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label">User Id</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Name</label>
-                                <input class="form-control" type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Address</label>
-                                <input class="form-control" type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control"
-                                       placeholder="(123) 456-7890"
-                                       pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                                       title="Phone number should be in the format (123) 456-7890">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Salary</label>
-                                <input class="form-control" type="text" aria-label="default input example">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
+    <!-- Modal for viewing order details for Thenura -->
+    <div class="modal fade" id="orderDetailsModal3" tabindex="-1" aria-labelledby="orderDetailsModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel3">Order Details for Emily Johnson</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> 3</p>
+                    <p><strong>Customer Name:</strong> Thenura</p>
+                    <p><strong>Date:</strong> 2024-10-13</p>
+                    <p><strong>Total Price:</strong> Rs. 300.00</p>
+                    <p><strong>Payment Method:</strong> Cash</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>
+                        <li>Banana - Quantity: 5</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- User Form Edit -->
-    <section class="user-form-edit">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Customer</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="user-id" class="form-label">Customer Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label" id="user-id">Customer Id</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="user-name" class="form-label">Name</label>
-                                <input class="form-control" id="user-name"type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-address" class="form-label">Address</label>
-                                <input class="form-control" id="user-address" type="text" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="user-phone"
-                                       placeholder="(123) 456-7890"
-                                       pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                                       title="Phone number should be in the format (123) 456-7890">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="user-salary" class="form-label">Salary</label>
-                                <input class="form-control" id="user-salary" type="text" aria-label="default input example">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Form (New) -->
-    <section class="product-form-new">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">New Product</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="new-product-form">
-                            <div class="mb-3">
-                                <label for="newProductCode" class="form-label">Code:</label>
-                                <input id="newProductCode" class="form-control" type="text">
-                            </div>
-                            <div class="mb-3">
-                                <label for="newProductDesc" class="form-label">Description:</label>
-                                <input id="newProductDesc" class="form-control" type="text">
-                            </div>
-                            <div class="upload-container">
-                                <div class="upload-box" id="uploadBoxNew">
-                                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                                    <p>Drag & Drop to Upload File</p>
-                                    <p>OR</p>
-                                    <button type="button" id="browseFileButtonNew">Browse File</button>
-                                    <input type="file" id="fileInputNew" hidden>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="newProductUnitPrice" class="form-label">Unit Price:</label>
-                                <input id="newProductUnitPrice" class="form-control" type="text">
-                            </div>
-                            <div class="mb-3">
-                                <label for="newProductQtyOnHand" class="form-label">Qty On Hand:</label>
-                                <input id="newProductQtyOnHand" class="form-control" type="text">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Form (Edit) -->
-    <section class="product-form-edit">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Edit Product</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="edit-product-form">
-                            <div class="mb-3">
-                                <label for="editProductCode" class="form-label">Code:</label>
-                                <input id="editProductCode" class="form-control" type="text">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editProductDesc" class="form-label">Description:</label>
-                                <input id="editProductDesc" class="form-control" type="text">
-                            </div>
-                            <div class="upload-container">
-                                <div class="upload-box" id="uploadBoxEdit">
-                                    <!-- Image Preview and Upload UI -->
-                                    <img id="imagePreviewEdit" class="preview" src="" alt="Image Preview" style="display:none;" />
-                                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                                    <p id="uploadTextEdit">Drag & Drop to Upload File</p>
-                                    <p>OR</p>
-                                    <button type="button" id="browseFileButtonEdit">Browse File</button>
-                                    <input type="file" id="fileInputEdit" hidden>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editProductUnitPrice" class="form-label">Unit Price:</label>
-                                <input id="editProductUnitPrice" class="form-control" type="text">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editProductQtyOnHand" class="form-label">Qty On Hand:</label>
-                                <input id="editProductQtyOnHand" class="form-control" type="text">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
 
-    <!--    Bootstrap script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- Custom JS -->
-    <script src="assets/scripts/script.js"></script>
-
+<script src="../src/assets/lib/jquery-3.7.1.min.js"></script>
+<script src="../src/assets/style/script.js"></script>
 </body>
 </html>
