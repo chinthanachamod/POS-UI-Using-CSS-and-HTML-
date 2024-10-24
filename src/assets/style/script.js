@@ -403,3 +403,74 @@ Add functionality to handle order-history operations
 Note: The order_history_array variable is assumed to be an array of order history objects with properties id, customer_id, total_amount, order_date, and order_status.
  */
 
+const orders = [
+    {
+        id: 1,
+        customerName: "Chamod",
+        date: "2024-09-10",
+        totalPrice: "Rs. 600.00",
+        paymentMethod: "Card",
+        items: [
+            { name: "Apple", quantity: 3 },
+            { name: "Banana", quantity: 2 }
+        ]
+    },
+    {
+        id: 2,
+        customerName: "Theekshana",
+        date: "2024-10-02",
+        totalPrice: "Rs. 750.00",
+        paymentMethod: "Card",
+        items: [
+            { name: "Orange", quantity: 1 },
+            { name: "Grapes", quantity: 2 },
+            { name: "Pineapple", quantity: 1 }
+        ]
+    },
+    {
+        id: 3,
+        customerName: "Thenura",
+        date: "2024-10-13",
+        totalPrice: "Rs. 300.00",
+        paymentMethod: "Cash",
+        items: [
+            { name: "Banana", quantity: 5 }
+        ]
+    }
+];
+
+// Function to populate modal
+function populateModal(orderId) {
+    const order = orders.find(o => o.id === orderId);
+    if (!order) return;
+
+    // Update modal content
+    document.getElementById('modalOrderId').textContent = order.id;
+    document.getElementById('modalCustomerName').textContent = order.customerName;
+    document.getElementById('modalOrderDate').textContent = order.date;
+    document.getElementById('modalTotalPrice').textContent = order.totalPrice;
+    document.getElementById('modalPaymentMethod').textContent = order.paymentMethod;
+
+    // Clear previous items
+    const modalOrderItems = document.getElementById('modalOrderItems');
+    modalOrderItems.innerHTML = '';
+
+    // Add items to modal
+    order.items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - Quantity: ${item.quantity}`;
+        modalOrderItems.appendChild(li);
+    });
+}
+
+// Add event listeners to buttons
+document.querySelectorAll('.view-order-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const orderId = parseInt(this.getAttribute('data-order-id'));
+        populateModal(orderId);
+
+        // Show the modal
+        const modal = new bootstrap.Modal(document.getElementById('orderDetailsModal'));
+        modal.show();
+    });
+});
