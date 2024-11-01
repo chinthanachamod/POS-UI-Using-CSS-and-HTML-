@@ -119,7 +119,6 @@ $('#customerTableBody').on('click', 'tr', function () {
 });
 
 
-
 $('#customer_update_btn').on('click', function () {
 
     let index = selected_customer_index;
