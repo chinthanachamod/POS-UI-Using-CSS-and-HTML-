@@ -1,7 +1,8 @@
-/*Add navigation event listeners to display corresponding sections and hide others
-=============================================================================================*/
+/*
+/!*Add navigation event listeners to display corresponding sections and hide others
+=============================================================================================*!/
 
-/*Select navigation elements by ID for future event handling*/
+/!*Select navigation elements by ID for future event handling*!/
 let dashboard_nav = document.getElementById("dashboard-nav");
 let signin_nav = document.getElementById("signin-nav");
 let signup_nav = document.getElementById("signup-nav");
@@ -11,7 +12,7 @@ let order_nav = document.getElementById("order-nav");
 let order_history_nav = document.getElementById("order-history-nav");
 
 
-/*Select section elements by ID for content management*/
+/!*Select section elements by ID for content management*!/
 let dashboard_section = document.getElementById("dashboardSection");
 let signin_section = document.getElementById("signinSection");
 let signup_section = document.getElementById("signupSection");
@@ -21,7 +22,7 @@ let order_section = document.getElementById("orderSection");
 let order_history_section = document.getElementById("orderHistorySection");
 
 
-/*Show dashboard section and hide other sections for navigation control*/
+/!*Show dashboard section and hide other sections for navigation control*!/
 dashboard_section.style.display="block";
 signin_section.style.display="none";
 signup_section.style.display="none";
@@ -31,7 +32,7 @@ order_section.style.display="none";
 order_history_section.style.display="none";
 
 
-/*Add click event to dashboard navigation for section visibility control*/
+/!*Add click event to dashboard navigation for section visibility control*!/
 dashboard_nav.addEventListener('click', function () {
     dashboard_section.style.display="block"
     signin_section.style.display="none"
@@ -43,7 +44,7 @@ dashboard_nav.addEventListener('click', function () {
 });
 
 
-/*Implement click event for sign-in navigation to show sign-in section*/
+/!*Implement click event for sign-in navigation to show sign-in section*!/
 signin_nav.addEventListener('click', function () {
     dashboard_section.style.display="none"
     signin_section.style.display="block"
@@ -55,7 +56,7 @@ signin_nav.addEventListener('click', function () {
 });
 
 
-/*Add click event for sign-up navigation to display sign-up section*/
+/!*Add click event for sign-up navigation to display sign-up section*!/
 signup_nav.addEventListener('click', function () {
     dashboard_section.style.display="none"
     signin_section.style.display="none"
@@ -66,8 +67,9 @@ signup_nav.addEventListener('click', function () {
     order_history_section.style.display="none";
 });
 
+/!*------------------------------Customer-----------------------------------------------------*!/
 
-/*Implement click event for customer navigation to show customer section*/
+/!*Implement click event for customer navigation to show customer section*!/
 customer_nav.addEventListener('click', function () {
     dashboard_section.style.display="none"
     signin_section.style.display="none"
@@ -79,7 +81,10 @@ customer_nav.addEventListener('click', function () {
 });
 
 
-/*Implement click event for item navigation to show item section*/
+
+/!*------------------------------------ Item -------------------------------------------------*!/
+
+/!*Implement click event for item navigation to show item section*!/
 item_nav.addEventListener('click', function () {
     dashboard_section.style.display="none"
     signin_section.style.display="none"
@@ -90,7 +95,9 @@ item_nav.addEventListener('click', function () {
     order_history_section.style.display="none";
 });
 
-/*Implement click event for order navigation to show order section*/
+/!*------------------------------------ Order -------------------------------------------------*!/
+
+/!*Implement click event for order navigation to show order section*!/
 order_nav.addEventListener('click', function () {
     dashboard_section.style.display="none"
     signin_section.style.display="none"
@@ -101,7 +108,9 @@ order_nav.addEventListener('click', function () {
     order_history_section.style.display="none";
 });
 
-/*Implement click event for order history navigation to show order history section*/
+/!*------------------------------------ Order History -------------------------------------------------*!/
+
+/!*Implement click event for order history navigation to show order history section*!/
 order_history_nav.addEventListener('click', function () {
     dashboard_section.style.display="none"
     signin_section.style.display="none"
@@ -111,16 +120,18 @@ order_history_nav.addEventListener('click', function () {
     order_section.style.display="none";
     order_history_section.style.display="block";
 });
+*/
 
 
 /*
-=======================================================================================================*/
+==============================================CUSTOMER=========================================================*/
 
 /*
 Add functionality to handle customer CRUD operations
 Note: The customer_array variable is assumed to be an array of customer objects with properties id, customer_name, customer_email, and mobile.
  */
 let customer_array = [];
+
 
 // Function to load customers into the table
 const loadCustomerTable = () => {
@@ -190,8 +201,31 @@ const addCustomer = () => {
         mobile: mobile,
     };
 
+
     // Add the new customer to the array
     customer_array.push(customer);
+
+    //clean Customer form fields
+    $('#customerName').val("");
+    $('#customerEmail').val("");
+    $('#customerPhone').val("");
+
+
+    /*$("#customer_delete_btn").on('click', function() {
+        customer_array.splice(selected_customer_index, 1);
+
+    })*/
+
+    /*if (first_name.length===0) {
+        alert("Invalid First Name");
+    } else if (last_name.length===0) {
+        alert("Invalid Last Name");
+    } else if (email.length===0) {
+        alert("Invalid Email");
+    } else if (phone.length===0) {
+        else
+    }
+*/
 
     loadCustomerTable(); // Reload the table to show the new customer
     $('#customerForm')[0].reset(); // Clear form fields after saving
@@ -201,8 +235,11 @@ const addCustomer = () => {
 $("#customer_save_btn").on("click", addCustomer);
 
 
+
+
+
 /*
-==========================================================================================================*/
+====================================================ITEM======================================================*/
 
 /*
 Add functionality to handle item CRUD operations
@@ -296,7 +333,7 @@ $("#item_save_btn").on("click", addItem);
 
 
 /*
-==========================================================================================================*/
+=================================================ORDER=========================================================*/
 
 /*
 Add functionality to handle order operations
@@ -396,7 +433,7 @@ $("#order_save_btn").on("click", addOrder);
 
 
 /*
-==========================================================================================================*/
+==================================================ORDER HISTORY================================================*/
 
 /*
 Add functionality to handle order-history operations
