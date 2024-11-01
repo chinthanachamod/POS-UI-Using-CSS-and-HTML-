@@ -82,15 +82,14 @@ $("#customer_add_btn").on("click", function() {
             address
         );
 
-        console.log(customer);
-
 
         customer_array.push(customer);
 
-        loadCustomerTable();
-
         // clean customer form
         cleanCustomerForm();
+
+        loadCustomerTable();
+
 
     }
 
